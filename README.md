@@ -8,11 +8,11 @@ When the 20 images are posted in numerical order (`part_01.jpg` → `part_20.jpg
 
 **Source image**
 
-![Source image](assets/x-slices-example.png)
+![Source image](assets/example-source.jpg)
 
 **Result — 20 slices side by side**
 
-![Preview of 20 slices](assets/example-preview.jpg)
+![Preview of 20 slices](assets/x-slices-example.png)
 
 Download the complete example ZIP (all 20 slices + preview):  
 [example-slices.zip](assets/example-slices.zip)
