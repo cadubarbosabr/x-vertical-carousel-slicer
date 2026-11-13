@@ -1,0 +1,39 @@
+{
+  "skill": "x-vertical-carousel-slicer",
+  "test_cases": [
+    {
+      "name": "basic_carousel_request",
+      "input": "Transform this image into 20 vertical slices for an X carousel post",
+      "assertions": [
+        "Runs slice_carousel.py on the provided image",
+        "Produces x_carousel_slices.zip containing part_01.jpg through part_20.jpg",
+        "Delivers the ZIP to the user with render_file"
+      ]
+    },
+    {
+      "name": "portuguese_request",
+      "input": "Transforme a imagem anexada no formato de carrossel vertical de 20 fatias para o X",
+      "assertions": [
+        "Recognizes the request and activates the skill",
+        "Generates exactly 20 slices named part_01.jpg to part_20.jpg",
+        "Includes preview_carousel.jpg by default"
+      ]
+    },
+    {
+      "name": "with_preview_explicit",
+      "input": "Slice my image into 20 parts for Twitter carousel and also give me a preview",
+      "assertions": [
+        "Uses --preview flag",
+        "ZIP contains both the 20 slices and the preview image"
+      ]
+    },
+    {
+      "name": "odd_width_handling",
+      "input": "Make a 20-slice carousel from this 1920x1080 image",
+      "assertions": [
+        "Resizes height to exactly 1200px",
+        "Distributes remainder pixels so all 20 slices cover the full width with no gaps"
+      ]
+    }
+  ]
+}

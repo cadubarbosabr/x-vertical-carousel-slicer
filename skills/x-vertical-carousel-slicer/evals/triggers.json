@@ -1,0 +1,29 @@
+{
+  "skill": "x-vertical-carousel-slicer",
+  "test_cases": [
+    {
+      "input": "Transform this image into 20 vertical slices for X carousel",
+      "should_trigger": true
+    },
+    {
+      "input": "Crie um carrossel vertical de 20 fatias para o Twitter a partir desta imagem",
+      "should_trigger": true
+    },
+    {
+      "input": "I need part_01.jpg to part_20.jpg from this wide photo for a Twitter post",
+      "should_trigger": true
+    },
+    {
+      "input": "Slice image for Instagram stories",
+      "should_trigger": false
+    },
+    {
+      "input": "Resize this image to 1200px height",
+      "should_trigger": false
+    },
+    {
+      "input": "Create a horizontal carousel of 5 images",
+      "should_trigger": false
+    }
+  ]
+}
