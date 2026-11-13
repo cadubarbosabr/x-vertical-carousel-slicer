@@ -10,16 +10,16 @@ When the 20 images are posted in numerical order (`part_01.jpg` → `part_20.jpg
 
 ![Source image](assets/example-source.jpg)
 
-## Live Example on X
+**Result — 20 slices side by side**
 
-This is the same image posted as a 20-image carousel on X:
-
-[![X Post by @CaduBarbosaBR](https://x.com/CaduBarbosaBR/status/2121245526859681832)
-
-[View the full carousel on X](https://x.com/CaduBarbosaBR/status/2121245526859681832)
+![Preview of 20 slices](assets/example-preview.jpg)
 
 Download the complete example ZIP (all 20 slices + preview):  
 [example-slices.zip](assets/example-slices.zip)
+
+## Live Example on X
+
+https://x.com/CaduBarbosaBR/status/2121245526859681832
 
 ## Features
 
