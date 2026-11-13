@@ -1,0 +1,18 @@
+{
+  "name": "x-vertical-carousel-slicer",
+  "version": "1.0.0",
+  "description": "Transforms images into exactly 20 equal vertical slices for X (Twitter) carousel posts. Resizes to 1200px height, saves high-quality JPEGs (part_01.jpg to part_20.jpg), and packages them into a ZIP.",
+  "author": "Cadu Barbosa",
+  "homepage": "https://github.com/CaduBarbosaBR/x-vertical-carousel-slicer",
+  "license": "MIT",
+  "keywords": [
+    "x",
+    "twitter",
+    "carousel",
+    "image",
+    "slicer",
+    "social-media",
+    "jpeg"
+  ],
+  "category": "productivity"
+}
