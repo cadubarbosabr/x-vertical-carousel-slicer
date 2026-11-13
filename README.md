@@ -14,7 +14,7 @@ When the 20 images are posted in numerical order (`part_01.jpg` → `part_20.jpg
 
 This is the same image posted as a 20-image carousel on X:
 
-[![X Post by @CaduBarbosaBR](https://pbs.twimg.com/media/HXAtjnqXwAANhKm.jpg)](https://x.com/CaduBarbosaBR/status/2121245526859681832)
+[![X Post by @CaduBarbosaBR](https://x.com/CaduBarbosaBR/status/2121245526859681832)
 
 [View the full carousel on X](https://x.com/CaduBarbosaBR/status/2121245526859681832)
 
