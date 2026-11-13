@@ -4,6 +4,19 @@ Transforms a single image into a ZIP containing **exactly 20 vertical slices** o
 
 When the 20 images are posted in numerical order (`part_01.jpg` → `part_20.jpg`), users can swipe through the carousel and reconstruct the original continuous image.
 
+## Example
+
+**Source image**
+
+![Source image](assets/example-source.jpg)
+
+**Result — 20 slices side by side**
+
+![Preview of 20 slices](assets/example-preview.jpg)
+
+Download the complete example ZIP (all 20 slices + preview):  
+[example-slices.zip](assets/example-slices.zip)
+
 ## Features
 
 - Resizes image to exactly **1200 px height** (aspect ratio preserved)
@@ -23,8 +36,6 @@ When the 20 images are posted in numerical order (`part_01.jpg` → `part_20.jpg
 mkdir -p ~/.grok/skills
 cp -r skills/x-vertical-carousel-slicer ~/.grok/skills/
 ```
-
-Or clone the whole repo and copy the skill folder.
 
 ### As a Grok Build plugin
 
@@ -46,7 +57,7 @@ or
 
 The skill will run the bundled script and deliver the ZIP.
 
-## Script Usage (standalone)
+## Standalone Script
 
 ```bash
 python3 skills/x-vertical-carousel-slicer/scripts/slice_carousel.py input.png --preview --output-dir ./output
