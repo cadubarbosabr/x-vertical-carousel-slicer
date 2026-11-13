@@ -1,6 +1,6 @@
 ---
 name: x-vertical-carousel-slicer
-description: "Transforms an attached image into exactly 20 equal vertical slices (left-to-right) for an X (Twitter) carousel post. Resizes to 1200px height maintaining aspect ratio, saves high-quality JPEGs named part_01.jpg to part_20.jpg, and packages them into a single ZIP. Use when the user requests X/Twitter vertical carousel, 20 image slices, part_01.jpg style output, or continuous swipe reconstruction of a wide image."
+description: "Transforms an attached image into 4 to 20 equal vertical slices (left-to-right) for an X (Twitter) carousel post. Default is 20. Resizes to 1200px height, saves high-quality JPEGs named part_01.jpg onwards, and packages them into a single ZIP. Use when the user requests X/Twitter vertical carousel, image slices, or continuous swipe reconstruction."
 type: workflow
 lifecycle: active
 ---
@@ -14,19 +14,24 @@ Transforms a single image into a ZIP containing 20 sequential vertical slices op
 1. **Locate the input image**  
    The user will attach or provide a path to the source image. If no image is present, ask for it.
 
-2. **Run the slicer script**  
+2. **Ask for number of slices (optional)**  
+   If the user does not specify, use **20** (default).  
+   Accepted range: **4 to 20**.
+
+3. **Run the slicer script**  
    Execute the bundled script. Always use `--preview` unless the user explicitly disables it.
 
    ```bash
-   python3 /workspace/artifacts/x-vertical-carousel-slicer/scripts/slice_carousel.py INPUT_IMAGE.png --preview --output-dir /tmp/carousel_output
+   python3 skills/x-vertical-carousel-slicer/scripts/slice_carousel.py INPUT_IMAGE.png --slices 12 --preview --output-dir /tmp/carousel_output
    ```
 
    - Replace `INPUT_IMAGE.png` with the actual file path.
+   - Replace `12` with the desired number (or omit `--slices` to use the default 20).
    - The script automatically:
      - Resizes to exactly **1200 px height** (aspect ratio preserved)
-     - Divides into **exactly 20 vertical slices** from left to right
+     - Divides into the requested number of vertical slices from left to right
      - Distributes any remainder pixels across the first slices so total width is fully covered
-     - Saves as `part_01.jpg` … `part_20.jpg` at JPEG quality 95
+     - Saves as `part_01.jpg` … `part_NN.jpg` at JPEG quality 95
      - Generates `preview_carousel.jpg` (horizontal reduced preview)
      - Creates `x_carousel_slices.zip` containing all slices (+ preview)
 
@@ -63,7 +68,7 @@ Transforms a single image into a ZIP containing 20 sequential vertical slices op
 | Image too small | Script still resizes to 1200 px height; quality may degrade if original is tiny |
 | Non-RGB image | Automatically converted to RGB before slicing |
 | Script not found | Use absolute path from the skill directory |
-| User wants different slice count | This skill is fixed at 20 slices for X carousel. Do not modify unless user explicitly requests a different number and confirms |
+| User wants different slice count | Ask or use the number they specified (must be between 4 and 20). Pass it with `--slices N` |
 
 ## Example Usage
 

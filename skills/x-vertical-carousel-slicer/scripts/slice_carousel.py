@@ -74,8 +74,10 @@ def create_zip(files: list[Path], zip_name: str = "x_carousel_slices.zip") -> Pa
     return zip_path
 
 def main():
-    parser = argparse.ArgumentParser(description="Slice image into 20 vertical parts for X carousel")
+    parser = argparse.ArgumentParser(description="Slice image into vertical parts for X carousel")
     parser.add_argument("input_image", type=Path, help="Path to the input image")
+    parser.add_argument("--slices", type=int, default=20, choices=range(4, 21),
+                        help="Number of slices (4 to 20, default: 20)")
     parser.add_argument("--output-dir", type=Path, default=Path("."), help="Output directory")
     parser.add_argument("--preview", action="store_true", help="Also generate a horizontal preview")
     parser.add_argument("--zip-name", default="x_carousel_slices.zip", help="Name of the output ZIP")
@@ -86,7 +88,6 @@ def main():
         sys.exit(1)
 
     args.output_dir.mkdir(parents=True, exist_ok=True)
-    # Change to output dir so relative paths work cleanly
     original_cwd = Path.cwd()
     try:
         import os
@@ -99,8 +100,8 @@ def main():
         resized = resize_to_height(img, 1200)
         print(f"Resized to: {resized.size}")
 
-        print("Creating 20 vertical slices...")
-        slice_paths = create_slices(resized, num_slices=20, quality=95)
+        print(f"Creating {args.slices} vertical slices...")
+        slice_paths = create_slices(resized, num_slices=args.slices, quality=95)
         print(f"Created slices: {[p.name for p in slice_paths]}")
 
         files_to_zip = list(slice_paths)

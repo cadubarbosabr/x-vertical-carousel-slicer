@@ -12,7 +12,7 @@ When the 20 images are posted in numerical order (`part_01.jpg` → `part_20.jpg
 
 **Result — 20 slices side by side**
 
-![Preview of 20 slices](assets/x-slices-example.png)
+![Preview of 20 slices](assets/example-preview.jpg)
 
 Download the complete example ZIP (all 20 slices + preview):  
 [example-slices.zip](assets/example-slices.zip)
@@ -24,7 +24,7 @@ https://x.com/CaduBarbosaBR/status/2121245526859681832
 ## Features
 
 - Resizes image to exactly **1200 px height** (aspect ratio preserved)
-- Splits into **exactly 20 equal vertical slices** (left → right)
+- Choose the number of slices: **4 to 20** (default is 20)
 - Distributes remainder pixels so the full width is covered with no gaps
 - Saves as high-quality JPEG (quality 95)
 - Naming: `part_01.jpg` (leftmost) to `part_20.jpg` (rightmost)
@@ -64,8 +64,10 @@ The skill will run the bundled script and deliver the ZIP.
 ## Standalone Script
 
 ```bash
-python3 skills/x-vertical-carousel-slicer/scripts/slice_carousel.py input.png --preview --output-dir ./output
+python3 skills/x-vertical-carousel-slicer/scripts/slice_carousel.py input.png --slices 10 --preview --output-dir ./output
 ```
+
+Use `--slices` to choose between 4 and 20 slices (default: 20).
 
 Requires Python 3 and Pillow (`pip install pillow`).
 
