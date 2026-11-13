@@ -8,7 +8,7 @@ When the 20 images are posted in numerical order (`part_01.jpg` → `part_20.jpg
 
 **Source image**
 
-![Source image](assets/example-source.jpg)
+![Source image](assets/x-slices-example.png)
 
 **Result — 20 slices side by side**
 
